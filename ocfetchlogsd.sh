@@ -61,7 +61,7 @@ OC_PASSWORD=$4
 # e.g. dev-in
 OC_PROJECT=$5
 # e.g. bmw
-NFS_SERVICE=$6
+OC_SERVICE=$6
 
 # business validation
 if [ $OPERATION != "start" ] && [ $OPERATION != "stop" ] ; then
@@ -113,7 +113,7 @@ echo ""
 oc project $OC_PROJECT >/dev/null
 
 if [ -n "$NFS_SERVICE" ]; then
-    PODS=$(oc get pods --show-all=false --output name | grep $NFS_SERVICE)
+    PODS=$(oc get pods --show-all=false --output name | grep $OC_SERVICE)
 else
     PODS=$(oc get pods --show-all=false --output name)
 fi
