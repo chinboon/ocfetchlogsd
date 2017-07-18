@@ -42,25 +42,25 @@ ocfetchlogs.sh stop
 
 #### Examples
 
-To fetch all logs from all pods in OpenShift project 'dev-in' and service 'bsoi'
+To fetch all logs from all pods in OpenShift project 'sample' and service 'eap'
 
 ```
-ocfetchlogs.sh start ocp-console-rdc.np.ocp.standardchartered.com:8443 user password dev-in bsoi
+ocfetchlogs.sh start 10.1.2.2:8443 user password sample eap
 ```
 
-To fetch all logs from all pods from all services in OpenShift project 'st-nfs-in'
+To fetch all logs from all pods from all services in OpenShift project 'sample'
 
 ```
-ocfetchlogs.sh start ocp-console-rdc.np.ocp.standardchartered.com:8443 user password st-nfs-in
+ocfetchlogs.sh start 10.1.2.2:8443 user password sample
 ```
 
 #### Sample run outputs
 
 ```
 Ohs-MacBook-Pro:ocfetchlogsd chinboon$ ./ocfetchlogsd.sh start dev-in
-Logging into OpenShift Console 'https://ocp-console-rdc.np.ocp.standardchartered.com:8443' using 'devel4' with password *******
+Logging into OpenShift Console 'https://10.1.2.2:8443' using 'user' with password *******
 
-Using project 'dev-in'
+Using project 'sample'
 
 daemon started successfully
 
@@ -68,23 +68,9 @@ you can start tailing the logs in the current directory
 
 EXAMPLES
 
-    tail -f dev-in-podnfs-audit-v1-blue-1-9rnlz.log
-    tail -f dev-in-podnfs-audit-v1-green-1-r48n8.log
-    tail -f dev-in-podnfs-bmw-blue-5-hjcd6.log
-    tail -f dev-in-podnfs-bmw-green-6-1jd1s.log
-    tail -f dev-in-podnfs-boa-blue-1-t19s0.log
-    tail -f dev-in-podnfs-boa-green-2-g2chd.log
-    tail -f dev-in-podnfs-bsoi-blue-2-rklr4.log
-    tail -f dev-in-podnfs-bsoi-green-2-cl0tg.log
-    tail -f dev-in-podnfs-foa-blue-8-xh2st.log
-    tail -f dev-in-podnfs-orr-virtue-blue-1-bq1t9.log
-    tail -f dev-in-podnfs-orr-virtue-green-1-2gwm4.log
-    tail -f dev-in-podnfs-picasso-bsoi-blue-1-8kx5b.log
-    tail -f dev-in-podnfs-picasso-bsoi-green-1-2n06k.log
-    tail -f dev-in-podnfs-picasso-shared-service-blue-1-1623q.log
-    tail -f dev-in-podnfs-picasso-shared-service-green-1-p07cw.log
-    tail -f dev-in-podnfs-special-service-blue-1-x0g41.log
-    tail -f dev-in-podnfs-special-service-green-1-8wvvb.log
+    tail -f sample-eap-1-9rnlz.log
+    tail -f sample-eap-1-r48n8.log
+    
 ```
 
 ## LIMITATIONS
