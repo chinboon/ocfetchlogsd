@@ -32,17 +32,17 @@ if [ $# -eq 0 ]; then
     echo ""
     echo "USAGE"
     echo ""
-    echo "    ocfetchlogs.sh [start|stop] [oc_endpoint] [oc_username] [oc_password]  [oc-project-name] [nfs-service-name]"
+    echo "    ocfetchlogs.sh [start|stop] [oc_endpoint] [oc_username] [oc_password]  [oc-project-name] [oc-service-name]"
     echo ""
     echo "EXAMPLES"
     echo ""
-    echo "to fetch all logs from all pods in project 'dev-in' and application 'bsoi'"
+    echo "to fetch all logs from all pods in project 'sample' and application 'eap'"
     echo ""
-    echo "    ocfetchlogs.sh start ocp-console-rdc.np.ocp.standardchartered.com:8443 user password dev-in bsoi"
+    echo "    ocfetchlogs.sh start 10.1.2.2:8443 user password sample eap"
     echo ""
-    echo "to fetch all logs from all pods from all applications in project 'st-nfs-in'"
+    echo "to fetch all logs from all pods from all applications in project 'sample'"
     echo ""
-    echo "    ocfetchlogs.sh start ocp-console-rdc.np.ocp.standardchartered.com:8443 user password st-nfs-in"
+    echo "    ocfetchlogs.sh start 10.1.2.2:8443 user password eap"
     echo ""
     exit 1
 fi
@@ -70,17 +70,17 @@ if [ $OPERATION != "start" ] && [ $OPERATION != "stop" ] ; then
     echo ""
     echo "USAGE"
     echo ""
-    echo "    ocfetchlogs.sh [start|stop] [oc_endpoint] [oc_username] [oc_password] [oc-project-name] [nfs-service-name]"
+    echo "    ocfetchlogs.sh [start|stop] [oc_endpoint] [oc_username] [oc_password] [oc-project-name] [oc-service-name]"
     echo ""
     echo "EXAMPLES"
     echo ""
-    echo "to fetch all logs from all pods in project 'dev-in' and application 'bsoi'"
+    echo "to fetch all logs from all pods in project 'sample' and service 'eap'"
     echo ""
-    echo "    ocfetchlogs.sh start ocp-console-rdc.np.ocp.standardchartered.com:8443 user password dev-in bsoi"
+    echo "    ocfetchlogs.sh start 10.1.2.2:8443 user password sample eap"
     echo ""
-    echo "to fetch all logs from all pods from all applications in project 'st-nfs-in'"
+    echo "to fetch all logs from all pods from all applications in project 'sample'"
     echo ""
-    echo "    ocfetchlogs.sh start ocp-console-rdc.np.ocp.standardchartered.com:8443 user password st-nfs-in"
+    echo "    ocfetchlogs.sh start 10.1.2.2:8443 user password sample"
     echo ""
     exit 1
 fi
@@ -112,7 +112,7 @@ echo "Using project '"$OC_PROJECT"'"
 echo ""
 oc project $OC_PROJECT >/dev/null
 
-if [ -n "$NFS_SERVICE" ]; then
+if [ -n "$OC_SERVICE" ]; then
     PODS=$(oc get pods --show-all=false --output name | grep $OC_SERVICE)
 else
     PODS=$(oc get pods --show-all=false --output name)
