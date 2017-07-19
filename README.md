@@ -31,7 +31,7 @@ Its really simple to start the daemon right away
 Starting the daemon
 
 ```
-ocfetchlogs.sh start [oc_endpoint] [oc_username] [oc_password]  [oc-project-name] [nfs-service-name]
+ocfetchlogs.sh start [oc_endpoint] [oc_username] [oc_password]  [oc-project-name] [oc-service-name]
 ```
 
 Stopping the daemon
