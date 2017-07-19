@@ -88,4 +88,4 @@ Pull requests accepted
 
 ## ISSUES
 
-Email me chinboon.oh@sc.com
+Email me chinboon.oh2@gmail.com
